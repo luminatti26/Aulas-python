@@ -16,18 +16,17 @@ while valor_1 != -1:
     print(valor_1)
     valor_1 -= 1
 
+def vir_par():
+    contador = 0
+    while True:
+        valor_1 = int(input('informe um numero: '))
+        resultado =  valor_1 % 2
+        contador += 1
+        if resultado == 0:
+            x = valor_1 / 2
+            break
+    for index in range(1, contador, 1):
+        print(f'{x:.0f} X {valor_1}')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+vir_par()
