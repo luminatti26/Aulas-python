@@ -33,6 +33,6 @@ for index in range(0, 5, 1):
                     input(f'Informe o sobre sobrenome do usuario'
                           f' {nomes_sobrenomes[0][index]}: '))
 
-for index in range(0, 2):
-    for index_2 in range(0, 5):
-        print(nomes_sobrenomes[index][index_2] + nomes_sobrenomes[index + 1][index_2])
+for index in range(0, 1, 1):
+    for index_2 in range(0, 5, 1):
+        print( f'{nomes_sobrenomes[index][index_2]} {nomes_sobrenomes[index + 1][index_2]}')
