@@ -8,9 +8,6 @@ Criar a classe em um arquivo e criar o objeto em outro'''
 
 from Fundamentos_python.classes_para_exercicios import Animal
 
-
-
-
 animal_1 = Animal(input('Qual o nome do Animal?: '),
                   input(f'Quantas patas tem?: '),
                   input('Qual a cor?: '),
