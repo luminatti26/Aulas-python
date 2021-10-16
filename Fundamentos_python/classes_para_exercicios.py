@@ -88,3 +88,53 @@ class Cachorro(PythonPoo):
     def emitir_som(self):
         print(f'O {self.nome} fez au! au!')
 
+class Caixa():
+    def __init__(self, numero_caixa, valor_em_caixa):
+        self.numero_caixa = numero_caixa
+        self._valor_em_caixa = valor_em_caixa
+
+    def set_validacao(self, usuario):
+        if isinstance(usuario, AtendenteDeCaixa):
+            pass
+        else:
+            print('Você não é um atendende')
+
+class Pessoa(metaclass=ABCMeta):
+    def __init__(self, nome, cpf):
+        self.nome = nome
+        self.cpf = cpf
+
+class AtendenteDeCaixa(Pessoa):
+    def __init__(self, nome, cpf, caixa_relacionado):
+        super().__init__(nome, cpf)
+        self.caixa_relacionado = caixa_relacionado
+
+
+    def inserir_no_caixa(self, valor_1):
+        self.caixa_relacionado._valor_em_caixa += valor_1
+        print(f'{self.nome} inseriu R${valor_1} no caixa')
+
+    def retirar_do_caixa(self, valor_1):
+        self.caixa_relacionado._valor_em_caixa -= valor_1
+        print(f'{self.nome} retirou R${valor_1} no caixa')
+
+class Cliente(Pessoa):
+    def __init__(self, nome, cpf, valor_em_carteira):
+        super().__init__(nome, cpf)
+        self.valor_em_carteira = valor_em_carteira
+        self.caixa_furtado = 0
+
+    def pagamento(self, valor_1):
+        pass
+
+
+
+
+
+
+
+
+
+
+
+
