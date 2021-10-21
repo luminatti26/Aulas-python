@@ -20,21 +20,14 @@
 - A classe deve herdar da classe Pessoa
 - Deve possuir a caracteristica de valor_em_carteira'''
 
-from Fundamentos_python.classes_para_exercicios import AtendenteDeCaixa, Caixa, Cliente
+from Fundamentos_python.classes_para_exercicios import Caixa, Cliente, AtendenteDeCaixa
 
-if __name__ == '__main__':
 
-    lucao = Cliente('Lucão', '11575296900', 100.00)
 
-    caixa_1 = Caixa(1, 200.00)
 
-    atendente_1 = AtendenteDeCaixa('João', '12345678900', caixa_1)
 
-    atendente_1.inserir_no_caixa(50.00)
 
-    atendente_1.retirar_do_caixa(25.00)
 
-    print(caixa_1._valor_em_caixa)
 
 
 

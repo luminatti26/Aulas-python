@@ -89,15 +89,19 @@ class Cachorro(PythonPoo):
         print(f'O {self.nome} fez au! au!')
 
 class Caixa():
-    def __init__(self, numero_caixa, valor_em_caixa):
+    def __init__(self, numero_caixa, valor_em_caixa, atendente_relacionado):
         self.numero_caixa = numero_caixa
         self._valor_em_caixa = valor_em_caixa
 
-    def set_validacao(self, usuario):
-        if isinstance(usuario, AtendenteDeCaixa):
-            pass
-        else:
-            print('Você não é um atendende')
+    def get_valor_em_caixa(self):
+        return self._valor_em_caixa
+
+
+    def set_inserir_no_caixa(self, valor_1):
+        self._valor_em_caixa +=valor_1
+
+    def retirar_do_caixa(self, valor_1):
+        self.set_inserir_no_caixa(self.get_valor_em_caixa() - valor_1)
 
 class Pessoa(metaclass=ABCMeta):
     def __init__(self, nome, cpf):
@@ -109,14 +113,6 @@ class AtendenteDeCaixa(Pessoa):
         super().__init__(nome, cpf)
         self.caixa_relacionado = caixa_relacionado
 
-
-    def inserir_no_caixa(self, valor_1):
-        self.caixa_relacionado._valor_em_caixa += valor_1
-        print(f'{self.nome} inseriu R${valor_1} no caixa')
-
-    def retirar_do_caixa(self, valor_1):
-        self.caixa_relacionado._valor_em_caixa -= valor_1
-        print(f'{self.nome} retirou R${valor_1} no caixa')
 
 class Cliente(Pessoa):
     def __init__(self, nome, cpf, valor_em_carteira):
