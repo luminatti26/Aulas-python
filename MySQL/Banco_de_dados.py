@@ -7,18 +7,8 @@ db = mysql.connector.connect(
     password='lucas26'
 )
 
-'''try:
-    cursor = db.cursor()
-    print('conectou no banco')
-    sql = 'INSERT INTO pessoa (nome, idade) VALUES (%s, %s)'
-    informacoes = ('Lucas Minatti', 23)
-    cursor.execute(sql, informacoes)
-    db.commit()
-    cursor.close()
-except Exception as error:
-    print(error)'''
 
-'''try:
+try:
     cursor = db.cursor()
     print('conectou no banco')
     sql ='select * from pessoa'
@@ -28,9 +18,9 @@ except Exception as error:
         print(index[0], index[1])
     cursor.close()
 except Exception as error:
-    print(error)'''
+    print(error)
 
-'''try:
+try:
     cursor = db.cursor()
     print('conectou no banco')
     sql = 'update pessoa set nome = %s where nome = %s'
@@ -39,7 +29,7 @@ except Exception as error:
     db.commit()
     cursor.close()
 except Exception as error:
-    print(error)'''
+    print(error)
 
 try:
     cursor = db.cursor()

@@ -9,7 +9,7 @@ seguindo os tópicos acima.
 Para esse exercício utilizaremos o banco de dados e a orientação a objetos.
 2 – No mesmo Exercício crie um filtro de dados para poder pesquisar um usuário pelo nome '''
 import mysql.connector
-from MySQL.def_exercicios import cadastro,alter, delete
+from MySQL.def_exercicios import cadastro,alter, delete, vizualizar
 
 db = mysql.connector.connect(
     host='localhost',
@@ -30,23 +30,19 @@ while True:
           '1 - Cadastrar novo contato.\n'
           '2 - Alterar contato.\n'
           '3 - Excluir contato.\n'
-          '4 - Sair')
+          '4 - Visualizar lista\n'
+          '5 - Sair')
     opcao = int(input(': '))
     if opcao == 1:
-        nome = input('Informe o nome do contato: ')
-        email = input('Informe o e-mail do contato: ')
-        cargo = input('Informe o cargo do contato: ')
-        idade = int(input('Informe a idade do contato: '))
-        cadastro(nome, email, cargo, idade)
+        cadastro()
     elif opcao == 2:
         alter()
-        pass
 
     elif opcao == 3:
         delete()
-        pass
-
     elif opcao == 4:
+        vizualizar()
+    elif opcao == 5:
         break
     else:
         input('Opção inválida.')

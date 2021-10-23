@@ -103,10 +103,12 @@ class Caixa():
     def retirar_do_caixa(self, valor_1):
         self.set_inserir_no_caixa(self.get_valor_em_caixa() - valor_1)
 
+
 class Pessoa(metaclass=ABCMeta):
     def __init__(self, nome, cpf):
         self.nome = nome
         self.cpf = cpf
+
 
 class AtendenteDeCaixa(Pessoa):
     def __init__(self, nome, cpf, caixa_relacionado):
