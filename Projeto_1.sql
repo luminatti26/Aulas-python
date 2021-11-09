@@ -2,11 +2,11 @@ create database Projeto_1;
 
 use projeto_1;
 
-create table Clientes(
+create table clientes(
 id int auto_increment,
-nome varchar (40),
-sobrenome varchar (40),
-cpf varchar (11) unique,
+nome varchar (40) not null,
+sobrenome varchar (40) not null,
+cpf varchar (11) unique not null,
 telefone varchar (15),
 primary key(id)
 );
@@ -16,13 +16,19 @@ id int auto_increment,
 nome varchar(30),
 especie varchar(10) not null,
 raca varchar(30),
-idade int,
-condicoes varchar(100),
+idade varchar(15),
+Sexo varchar(10),
 primary key(id)
 );
 
+INSERT INTO clientes (nome, sobrenome, cpf, telefone) VALUES ("lucas", "minatti", "11575296900", "47997069196");
 
-select * from projeto_1.clientes;
-select * from projeto_1.animais;
+INSERT INTO animais (nome, especie, raca, idade, sexo) VALUES ("Boreal", "Gato", "Vira-Lata", "4 anos", "macho");
 
-drop table pets;
+select * from clientes;
+
+select * from animais;
+
+delete from clientes where id = 1;
+
+drop table animais;

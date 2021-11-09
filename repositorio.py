@@ -35,9 +35,9 @@ def visualizar_clientes_db(db):
         print(error)
 
 
-def alterar_clientes_db(db, id, nome, sobrenome, cpf, telefone):
+def alterar_clientes_db(db, id, nome, cpf, sobrenome, telefone):
     info = (nome, sobrenome, cpf, telefone, id)
-    sql = 'update clintes set nome = %s, sobrenome = %s, cpf = %s, telefone = %s where id = %s'
+    sql = 'update clientes set nome = %s, sobrenome = %s, cpf = %s, telefone = %s where id = %s'
     try:
         cursor = db.cursor()
         cursor.execute(sql, info)
