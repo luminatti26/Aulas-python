@@ -11,18 +11,15 @@
 <body>
     <nav class="nav">
         <a class="nav-link active" aria-current="page" href="/">Pagina inicial</a>
-        <a class="nav-link" href="/cadastro">Cadastro</a>
-        <a class="nav-link" href="/doação">Doação</a>
-        <a class="nav-link" href="/clientes">Clientes</a>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="/cadastro">Cadastro</a></li>
+              <li><a class="dropdown-item" href="/doação">Doação</a></li>
+              <li><a class="dropdown-item" href="/clientes">Registro de Clientes</a></li>
+              <li><a class="dropdown-item" href="/animais">Registro de animais</a></li>
             </ul>
           </li>
     </nav>
@@ -47,7 +44,7 @@
                 <td> {{registro[3]}} </td>
                 <td> {{registro[4]}} </td>
                 <td> {{registro[5]}} </td>
-                <td><button type="button" class="btn btn-primary btn-sm">Adotar</button></td>
+                <td><button type="button" class="btn btn-primary btn-sm"><a href="/deletarpet?id={{registro[0]}}">Adotar</a></button></td>
             </tr>
             {% endfor %}
         </tbody>
